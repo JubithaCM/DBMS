@@ -1,0 +1,57 @@
+
+SQL*Plus: Release 11.2.0.2.0 Production on Wed Mar 16 13:06:10 2022
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+SQL>  connect system
+Enter password:
+ERROR:
+ORA-28002: the password will expire within 211 days
+
+
+Connected.
+SQL> create table std(rollno int,name varchar(20),course varchar (20),year int);
+
+Table created.
+
+
+SQL> insert into std values(1,'Maya','BCA',2022);
+
+1 row created.
+
+SQL> insert into std values(2,'Rahul','BCA',2021);
+
+1 row created.
+
+SQL> insert into std values(3,'Sowbhagya','BCA',2021);
+
+1 row created.
+
+SQL> insert into std values(4,'Jubitha','BCA',2021);
+
+1 row created.
+
+SQL> select *from std;
+
+    ROLLNO NAME                 COURSE                     YEAR
+---------- -------------------- -------------------- ----------
+         1 Maya                 BCA                        2022
+         2 Rahul                BCA                        2021
+         3 Sowbhagya            BCA                        2021
+         4 Jubitha              BCA                        2021
+
+SQL> alter table std ADD PRIMARY KEY(rollno);
+
+Table altered.
+
+SQL> truncate table std;
+
+Table truncated.
+
+SQL> select *from std;
+
+no rows selected
+
+SQL>SQL> drop table std;
+
+Table dropped.
