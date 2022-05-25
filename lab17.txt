@@ -1,0 +1,77 @@
+> use Employee
+switched to db Employee
+> db.emp.insertMany([{ename:"Jubitha",Department:"Accounts",salary:"50000"},{ename:"Yaafis",Departm
+nt:"Sales",salary:"200000"},{ename:"Anam",Department:"Accounts",salary:"50000"},{ename:"Adam",Depar
+ment:"Sales",salary:"70000"},{ename:"Aadi",Department:"Accounts",salary:"80000"},{ename:"Haazin",De
+artment:"Testing",salary:"50000"},{ename:"Sara",Department:"Design",salary:"50000"},{ename:"july",D
+partment:"Coding",salary:"90000"},{ename:"deena",Department:"Accounts",salary:"40000"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("62833c361a11b5607a05102a"),
+                ObjectId("62833c361a11b5607a05102b"),
+                ObjectId("62833c361a11b5607a05102c"),
+                ObjectId("62833c361a11b5607a05102d"),
+                ObjectId("62833c361a11b5607a05102e"),
+                ObjectId("62833c361a11b5607a05102f"),
+                ObjectId("62833c361a11b5607a051030"),
+                ObjectId("62833c361a11b5607a051031"),
+                ObjectId("62833c361a11b5607a051032")
+        ]
+}
+> db.emp.find().pretty()
+{
+        "_id" : ObjectId("62833c361a11b5607a05102a"),
+        "ename" : "Jubitha",
+        "Department" : "Accounts",
+        "salary" : "50000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a05102b"),
+        "ename" : "Yaafis",
+        "Department" : "Sales",
+        "salary" : "200000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a05102c"),
+        "ename" : "Anam",
+        "Department" : "Accounts",
+        "salary" : "50000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a05102d"),
+        "ename" : "Adam",
+        "Department" : "Sales",
+        "salary" : "70000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a05102e"),
+        "ename" : "Aadi",
+        "Department" : "Accounts",
+        "salary" : "80000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a05102f"),
+        "ename" : "Haazin",
+        "Department" : "Testing",
+        "salary" : "50000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a051030"),
+        "ename" : "Sara",
+        "Department" : "Design",
+        "salary" : "50000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a051031"),
+        "ename" : "july",
+        "Department" : "Coding",
+        "salary" : "90000"
+}
+{
+        "_id" : ObjectId("62833c361a11b5607a051032"),
+        "ename" : "deena",
+        "Department" : "Accounts",
+        "salary" : "40000"
+}
+>

@@ -1,0 +1,110 @@
+SQL> connect
+Enter user-name: system
+Enter password:
+ERROR:
+ORA-28002: the password will expire within 189 days
+
+
+Connected.
+
+
+SQL> create table customer(name varchar(20),age int,hometown varchar(20),salary float);
+
+Table created.
+
+
+
+SQL> alter table customer ADD id INT;
+
+Table altered.
+
+SQL> alter table customer add primary key(id);
+
+Table altered.
+
+
+SQL> insert into customer(id,name,age,hometown,salary) values(1,'ramesh',32,'Ahammedabad',2000);
+
+1 row created.
+
+SQL> insert into customer(id,name,age,hometown,salary) values(2,'Khilan',25,'Delhi',1500);
+
+1 row created.
+
+SQL> insert into customer(id,name,age,hometown,salary) values(3,'Kaushik',23,'Kotal',2000);
+
+1 row created.
+
+SQL> insert into customer(id,name,age,hometown,salary) values(4,'Chaitali',25,'Mumbai',6500);
+
+1 row created.
+
+SQL> insert into customer(id,name,age,hometown,salary) values(5,'Hardik',27,'Bhopal',8500);
+
+1 row created.
+
+SQL> insert into customer(id,name,age,hometown,salary) values(6,'Kamal',22,'MP',4500);
+
+1 row created.
+
+SQL> insert into customer(id,name,age,hometown,salary) values(7,'Muffy',24,'Indore',10000);
+
+1 row created.
+
+SQL> insert into customer(id,name,age,hometown,salary) values(8,'Ramu',23,'Delhi',6000);
+
+1 row created.
+
+SQL> insert into customer(id,name,age,hometown,salary) values(9,'Rohit',24,'Ahammedabad',6000);
+
+1 row created.
+
+SQL> insert into customer(id,name,age,hometown,salary) values(10,'Shamli',23,'Mumbai',10000);
+
+1 row created.
+
+SQL> select *from customer;
+
+NAME                        AGE HOMETOWN                 SALARY         ID
+-------------------- ---------- -------------------- ---------- ----------
+ramesh                       32 Ahammedabad                2000          1
+Khilan                       25 Delhi                      1500          2
+Kaushik                      23 Kotal                      2000          3
+Chaitali                     25 Mumbai                     6500          4
+Hardik                       27 Bhopal                     8500          5
+Kamal                        22 MP                         4500          6
+Muffy                        24 Indore                    10000          7
+Ramu                         23 Delhi                      6000          8
+Rohit                        24 Ahammedabad                6000          9
+Shamli                       23 Mumbai                    10000         10
+
+10 rows selected.
+
+SQL> select *from customer where id=4;
+
+NAME                        AGE HOMETOWN                 SALARY         ID
+-------------------- ---------- -------------------- ---------- ----------
+Chaitali                     25 Mumbai                     6500          4
+
+SQL> select distinct hometown from customer;
+
+HOMETOWN
+--------------------
+Bhopal
+Kotal
+Delhi
+Ahammedabad
+Mumbai
+MP
+Indore
+
+7 rows selected.
+
+SQL> select count(salary) from customer;
+
+COUNT(SALARY)
+-------------
+           10
+
+SQL>
+

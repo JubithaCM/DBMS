@@ -1,0 +1,129 @@
+                                                                                                  SQL> create table emp(id int,first_name varchar(10),last_name varchar(10),deparment varchar(10),location varchar(10),salary int);
+
+Table created.
+
+SQL> insert into emp values(1,'harshad','kuwar','marketing','pune',10000);
+
+1 row created.
+
+SQL> insert into emp values(2,'anurag','rajput','it','mumbai',20000);
+
+1 row created.
+
+SQL> insert into emp values(3,'chaitali','tarle','it','chennai',30000);
+
+1 row created.
+
+SQL>  insert into emp values(4,'pranjal','patil','it','chennai',25000);
+
+1 row created.
+
+SQL>  insert into emp values(5,'suraj','tripathi','marketing','pune',15000);
+
+1 row created.
+
+
+
+SQL> insert into emp values(7,'sandhya','jain','finance','banglore',20000);
+
+1 row created.
+
+SQL> insert into emp values(6,'roshini','jadhav','finance','banglore',20000);
+
+1 row created.
+
+SQL> select *from emp;
+
+        ID FIRST_NAME LAST_NAME  DEPARMENT  LOCATION       SALARY
+---------- ---------- ---------- ---------- ---------- ----------
+         1 harshad    kuwar      marketing  pune            10000
+         2 anurag     rajput     it         mumbai          20000
+         3 chaitali   tarle      it         chennai         30000
+         4 pranjal    patil      it         chennai         25000
+         5 suraj      tripathi   marketing  pune            15000
+         7 sandhya    jain       finance    banglore        20000
+         6 roshini    jadhav     finance    banglore        20000
+
+7 rows selected.
+
+
+
+SQL> select *from emp where deparment='it' and location='chennai';
+
+        ID FIRST_NAME LAST_NAME  DEPARMENT  LOCATION       SALARY
+---------- ---------- ---------- ---------- ---------- ----------
+         3 chaitali   tarle      it         chennai         30000
+         4 pranjal    patil      it         chennai         25000
+
+SQL> select *from emp where deparment='it' or  location='chennai';
+
+        ID FIRST_NAME LAST_NAME  DEPARMENT  LOCATION       SALARY
+---------- ---------- ---------- ---------- ---------- ----------
+         2 anurag     rajput     it         mumbai          20000
+         3 chaitali   tarle      it         chennai         30000
+         4 pranjal    patil      it         chennai         25000
+
+
+SQL> select location as EMP_FN , location as adress  from emp;
+
+EMP_FN     ADRESS
+---------- ----------
+pune       pune
+mumbai     mumbai
+chennai    chennai
+chennai    chennai
+pune       pune                                                                                                                                                                                                                                                                                               
+banglore   banglore
+banglore   banglore
+
+7 rows selected.
+
+
+SQL> select first_name from emp where first_name like 's%';
+
+FIRST_NAME
+----------
+suraj
+sandhya
+
+SQL> select sum(salary),location from emp group by(location);
+
+SUM(SALARY) LOCATION
+----------- ----------
+      20000 mumbai
+      55000 chennai
+      25000 pune
+      40000 banglore
+
+
+
+SQL> select sum(salary),location from emp  having sum(salary)>10000 group by(location);
+
+SUM(SALARY) LOCATION
+----------- ----------
+      20000 mumbai
+      55000 chennai
+      25000 pune
+      40000 banglore
+
+SQL> select *from emp order by(first_name);
+
+        ID FIRST_NAME LAST_NAME  DEPARMENT  LOCATION       SALARY
+---------- ---------- ---------- ---------- ---------- ----------
+         2 anurag     rajput     it         mumbai          20000
+         3 chaitali   tarle      it         chennai         30000
+         1 harshad    kuwar      marketing  pune            10000
+         4 pranjal    patil      it         chennai         25000
+         6 roshini    jadhav     finance    banglore        20000
+         7 sandhya    jain       finance    banglore        20000
+         5 suraj      tripathi   marketing  pune            15000
+
+7 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL>
+
+
